@@ -1,22 +1,97 @@
-Nutrition and Diet Planner Project Description
-Project Overview
-The Nutrition and Diet Planner is a web-based application designed to assist users in tracking their dietary intake and managing nutritional goals. Built using the Flask framework, the application allows users to log meals utilizing a predefined food database or custom entries. Users can set personal dietary goals (calories, protein, fats, carbs) and receive personalized nutritional insights to support healthy eating habits.
+# 🖥️ Project 2: The Server Commander
 
-Key Features:
-Meal Logging: Easily log meals from a comprehensive food database or input custom options.
-Goal Setting: Set and update individual dietary goals to personalize the tracking experience.
-Nutritional Recommendations: Receive tailored suggestions based on user input and preferences.
-Hackathon Participation
-This project was developed during the Tic Tech Toe 2024 Hackathon, where teams competed to create innovative solutions to real-world problems. Our project stood out due to its focus on promoting healthy eating and empowering users with data-driven insights about their nutritional choices.
+> **Provisioning. Securing. Commanding.**
 
-Team Information
-We are Trio of Trouble, a motivated team dedicated to building impactful solutions. 
+## 📋 Overview
 
-The team members are:
-Priyanshi Limbachiya - https://github.com/priyanshi2693
-Himadri Raval - https://github.com/HIMADRIRAVAL
+A hands-on SysAdmin project where you act as a cloud infrastructure engineer to provision, configure, and serve a live web page from a virtual machine in the cloud.
 
+---
 
-Conclusion
-The Nutrition and Diet Planner represents our commitment to addressing dietary challenges faced by individuals today. We aim to encourage healthier eating habits and foster a proactive approach to nutrition through technology.
+## 🎯 Scenario
 
+A startup is launching a new dynamic application and needs a dedicated server environment. They require full control over the Operating System (OS) to install custom software and security patches.
+
+---
+
+## 🚀 Mission
+
+Act as a **SysAdmin** and provision a virtual server in the cloud by completing the following tasks:
+
+- ☁️ Launch a **Virtual Machine (EC2/VM)** using Linux (Ubuntu / Amazon Linux)
+- 🔐 Connect to the server securely using **SSH**
+- 🌐 Install a **Web Server (Nginx)** via the command line
+- 🏠 Host a custom **"Welcome to DecodeLabs"** webpage on the server
+
+---
+
+## 🛠️ Tools & Technologies
+
+| Tool | Purpose |
+|------|---------|
+| **AWS EC2 / Azure Virtual Machines** | Cloud VM provisioning |
+| **Terminal** | Command-line operations |
+| **SSH** | Secure server connection |
+| **Nginx** | Web server installation |
+| **Linux (Ubuntu / Amazon Linux)** | Operating System |
+
+---
+
+## 📁 Project Structure
+
+```
+server-commander/
+├── README.md
+├── index.html          # Custom "Welcome to DecodeLabs" webpage
+└── setup-notes.md      # Optional: commands and steps used
+```
+
+---
+
+## 🧭 Step-by-Step Guide
+
+### 1. Launch a VM
+- Go to **AWS EC2** or **Azure Virtual Machines**
+- Choose **Ubuntu 22.04 LTS** or **Amazon Linux 2**
+- Select instance type (e.g., `t2.micro` for free tier)
+- Configure Security Group to allow **port 22 (SSH)** and **port 80 (HTTP)**
+- Launch and download your `.pem` key pair
+
+### 2. Connect via SSH
+```bash
+ssh -i "decodelabs-key.pem" ubuntu@<your-public-ip>
+```
+
+### 3. Install Nginx
+```bash
+sudo apt update
+sudo apt install nginx -y
+sudo systemctl start nginx
+sudo systemctl enable nginx
+```
+
+### 4. Host the Webpage
+```bash
+sudo nano /var/www/html/index.html
+```
+
+Paste your custom HTML content and save. Then visit:
+```
+http://13.206.255.225
+```
+
+---
+
+## ✅ Completion Criteria
+
+- [ ] VM successfully launched on AWS EC2 or Azure
+- [ ] SSH connection established
+- [ ] Nginx installed and running
+- [ ] Custom "Welcome to DecodeLabs" page accessible via browser
+
+---
+
+## 👤 Author
+
+**Vahini Ananthoju**  
+GitHub: [@VahiniAnanthoju](https://github.com/VahiniAnanthoju)
